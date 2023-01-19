@@ -1,11 +1,12 @@
 import React from "react"
 import './App.css';
 import { BrowserRouter, Navigate, Outlet, Route,Routes } from 'react-router-dom'
-
+import axios from "axios";
 import {Home,Login,Register,BookingCar,Startup,UserBookings,AddCar,Profile,AdminHome,EditCar,Otp,Error404} from './pages/index' 
 import Addcar from "./pages/admin/AddCar/AddCar";
 
 function App() {
+  axios.defaults.baseURL="https://rentxcar.gamexonline.store";
   return (
     <div className="App">
     <BrowserRouter>  
