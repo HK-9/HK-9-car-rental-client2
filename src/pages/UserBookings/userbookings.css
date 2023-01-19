@@ -1,0 +1,9 @@
+.delete-btn{
+    transform: translateX(5rem);
+    overflow: hidden;
+    padding: 1rem;
+}
+.delete-btn:hover{
+    border-radius: 100px;
+    background-color: rgba(132, 132, 132, 0.205);
+}

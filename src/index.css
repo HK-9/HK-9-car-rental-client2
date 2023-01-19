@@ -1,0 +1,181 @@
+
+body{
+  background-color: rgb(236, 228, 228) !important;
+  box-sizing: border-box;
+  
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    z-index: 999;
+  }
+  .bs1 {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}.bs2{
+  box-shadow: rgba(255, 166, 0, 0.066) 0px 4px 16px, rgba(255, 102, 0, 0.11) 0px 8px 24px, rgba(255, 136, 0, 0.049) 0px 16px 56px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.header .bs1{
+  
+  padding: 10px;
+  background: rgb(35, 35, 35);
+  outline: 2px solid red;
+}
+.content {
+  /* min-height: 9vh; */
+  background: #ffffff !important;
+} 
+
+/* =========================== <LOGIN PAGE> ====================================== */
+.login{
+  background-color: rgb(106, 68, 68);
+  background-image: url("https://wallpapersmug.com/download/2560x1600/3bafee/headlight-dark-Porsche-911-GT3-R-car.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: 'realtive';
+  min-height: 100vh;
+}
+.login label , .login h1{
+  color: white !important;
+  opacity: 1;
+}
+.text-left{
+  text-align: left;
+}
+.login-form{
+  height: 78%;
+  background-color: #232323;
+  margin: 7rem 3rem;
+
+}
+/* .login-form input{
+  background-color:rgb(112, 112, 112);
+  border: none !important;
+  color: white;
+}  */
+image{
+  width: 100%;
+  height: 100%;
+}
+h3{
+  color: white;
+}
+.login-logo{
+  margin: 0,0,10;
+  padding: 0;
+  
+}
+
+
+/* ==========================BUTTON  =============================================*/
+.button-62 {
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: 0;
+  border-radius: 10px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5; 
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+/* ========================================================================= */
+.button-2 {
+  background: #23232300;
+  outline: 1px solid orange;
+  border: 4px solid orange;
+  border-radius: 12px;
+  color: #5e5e5e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  font-weight: bolder;
+  line-height: 2.5; 
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-2:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-2:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 102, 0.221), .125rem .125rem 1rem rgba(255, 153, 90, 0.264);
+}
+/* ==========================BUTTON 2 =============================================*/
+.bn632-hover {
+  width: 110px;
+  height: 35px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 20px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:focus {
+  outline: none;
+}
+
+.bn632-hover.bn19 {
+  background-image: linear-gradient(
+    to right,
+    #f5ce62,
+    #e43603,
+    #fa7199,
+    #e85a19
+  );
+
+}
+/* ================================================================================================ */
+
+/* =================================<LOGIN PAGE/>=================================================== */
+img, svg {
+  vertical-align: unset !important;
+}

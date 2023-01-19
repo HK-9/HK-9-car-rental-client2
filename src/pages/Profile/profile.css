@@ -1,0 +1,19 @@
+*{
+   
+}
+:where(.css-dev-only-do-not-override-1i536d8).ant-layout {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+  }
+  .mt-5 {
+    margin-top:0px !important;
+  }
+  :where(.css-dev-only-do-not-override-1i536d8).ant-layout .ant-layout-sider {
+    position: relative;
+    min-width: 0;
+    background: #ffffff !important;
+    transition: all 0.2s;
+  }

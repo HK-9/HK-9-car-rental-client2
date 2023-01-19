@@ -1,0 +1,62 @@
+body{
+    background-color: #EBEBEB;
+}
+
+.car-slogan{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: 5vh;
+  
+    color: orange;
+}
+.card{
+    border-radius: 0px !important;
+    display:inline-block;
+    padding: 0;
+    border: 0;
+    display: flex;
+    cursor: pointer;
+}
+.card:hover{
+    animation: pulse 0.3s linear 1;
+    box-shadow: inset;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+.card-txt{
+    padding: 0;
+    margin: 0;
+    top: 50%;
+    left: 60%;
+    position: absolute;
+    z-index: 2;
+    font-weight: 400;
+    font-size: 18px;
+    font-size: 1rem;
+
+}
+.carosal{
+    outline: 2px solid red;
+}
+#push:hover{
+    animation: pulse 0.3s linear 1;
+  }
+
+  /* @keyframes pulse{
+    25%  {transform: scale(0.9);}
+    75%  {transform: scale(1.1);}
+  }
+  @keyframes push{
+    50%  {transform: scale(0.8);}
+  }
+  @keyframes pop{
+    50%  {transform: scale(1.2);}
+  }
+  
+   */
+   a{
+    text-decoration: none;
+
+   }
+   .navigator-cards{
+    margin-bottom: 20px;
+   }
