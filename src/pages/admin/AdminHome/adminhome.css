@@ -1,0 +1,23 @@
+.actions{
+    transform: translateX(-20px);
+}
+.badge{
+    transform: translateX(-40px);
+    
+}
+:where(.css-dev-only-do-not-override-1i536d8).ant-badge .ant-badge-count {
+    z-index: auto;
+    min-width: 20px;
+    height: 20px;
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    white-space: nowrap;
+    text-align: center;
+    background: #ff4d4f;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #ffffff;
+    transition: background 0.2s;
+    text-align: center;
+}

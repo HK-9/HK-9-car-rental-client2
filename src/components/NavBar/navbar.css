@@ -1,0 +1,64 @@
+
+.header{
+    padding: 1rem 6rem;
+    background-color: #232323;
+    justify-content: space-between;
+    z-index: 999 !important;
+}
+.rentx__navbar-links_container{
+    display: flex;
+    flex-direction: row;
+    color: aliceblue;
+    
+}
+.bs1{
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+
+}
+.retx__nabar-logo{
+   
+}
+.navbar_logo{
+    width: 70%;
+    height: auto;
+  }
+.rentx__navbar-user{
+    /* transform: translateY(22px); */
+    padding-top: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    /* outline: 1px solid blue; */
+}
+.navbar_user_btn{
+    width: 6rem;
+    background-color: rgb(86, 86, 86);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(133, 133, 133);
+    outline: none;
+    box-shadow: none;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+    top: 30%;
+    
+}
+.navbar_menu_btn{
+    width: 6rem;
+    background-color: rgb(86, 86, 86);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(133, 133, 133);
+    outline: none;
+    box-shadow: none;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+    top: 30%;
+}
+.user-btn-icon{
+    padding: 0;
+}
+span{
+    margin-left: .3rem;
+}

@@ -1,0 +1,27 @@
+.mark-read{
+    color:grey;
+    font-size: x-small;
+    text-transform:none !important;
+    cursor: pointer;
+    padding: 2rem;
+    
+}
+.mark-read:hover{
+    color: rgb(156, 156, 156);
+}
+.time{
+    font-size:x-small;
+    position: absolute;
+    color: rgb(156, 156, 156);
+    transform: translateX(50px);
+    transform: translatey(13px);
+}
+:where(.css-dev-only-do-not-override-1i536d8).ant-drawer .ant-drawer-title {
+    flex: 1;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.88);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: bold;
+}

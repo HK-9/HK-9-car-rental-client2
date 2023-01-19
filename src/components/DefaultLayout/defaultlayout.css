@@ -1,0 +1,102 @@
+
+.header{
+    padding: 1rem 6rem;
+    background-color: #232323;
+    justify-content: space-between;
+    z-index: 999 !important;
+}
+.rentx__navbar-links_container{
+    display: flex;
+    flex-direction: row;
+    color: aliceblue;
+    
+}
+.bs1{
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+
+}
+.retx__nabar-logo{
+
+}
+.navbar_logo{
+    width: 70%;
+    height: auto;
+  }
+.rentx__navbar-user{
+    /* transform: translateY(22px); */
+    padding-top: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    /* outline: 1px solid blue; */
+}
+.navbar_user_btn{
+    width: 6rem;
+    background-color: rgb(86, 86, 86);
+    color: rgb(183, 181, 181);
+    border: 1px solid rgb(133, 133, 133);
+    outline: none;
+    box-shadow: none;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    
+}
+.user-btn-icon{
+    padding: 0;
+}
+span{
+    margin-left: .3rem;
+}
+.navbar-link-txt{
+    bottom: 0px;
+    color: rgb(165, 165, 165);
+    /* outline: 1px solid gray; */
+    display: inline-block;
+    /* margin-right: 1vw; */
+    font-weight: 500;
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 2px solid #232323;
+}
+.navbar-link-txt-home{
+    bottom: 0px;
+    color: orange;
+    /* outline: 1px solid gray; */
+    display: inline-block;
+    /* margin-right: 1vw; */
+    font-weight: 500;
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 2px solid #232323;
+}
+.navbar-link-logo{
+    bottom: 0px;
+    color: orange;
+
+    /* outline: 1px solid gray; */
+    display: inline-block;
+    /* margin-right: 1vw; */
+    font-weight: 500;
+    overflow: hidden;
+    cursor: pointer;
+}
+.navbar-link-txt:hover{
+    border-bottom: 2px solid orange;
+}
+.navbar-link-txt-home:hover{
+    color: darkgoldenrod;
+}
+.navbar-link{
+    margin-top: 1vh;
+    align-items: center;
+    width: 12rem;
+    justify-content: space-evenly;
+    /* outline: 1px solid blue; */
+    display: flex;
+}
+.noHover{
+    pointer-events: none
+}
