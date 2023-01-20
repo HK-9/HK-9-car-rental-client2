@@ -7,6 +7,7 @@ import{Person} from 'react-bootstrap-icons'
 import { useState } from 'react';
 import axios from 'axios';
 import {HomeOutlined} from '@ant-design/icons'
+axios.defaults.baseURL="https://rentx-api-e9zj.onrender.com"
 
 function DefaultLayout(props){
     const [data,setData] = useState(null);

@@ -31,7 +31,9 @@ try {
     dispatch({type: 'LOADING' , payload:false});  
 
 } catch (error) {
-    if(error.response.status === 401) message.error('Unauthorized access, Please login again');
+    if(error.response.status === 401 ) message.error('401 Unauthorized access, Please login again');
+    if(error.response.status === 403) message.error('403 Identity verification failed, Please login again');
+    if(error.response.status === 400) message.error('400 Internal server error please try again')
     console.log('@bookings api actions ',error);
     dispatch({type: 'LOADING' , payload:false});
 }
