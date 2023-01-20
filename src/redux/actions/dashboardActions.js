@@ -1,6 +1,10 @@
 import axios from 'axios';
 import {message} from 'antd'
 
+// axios.defaults.baseURL="https://rentxcar.gamexonline.store"
+axios.defaults.baseURL="https://rentx-api-e9zj.onrender.com"
+
+
 export const getdashboard = ()=>async (dispatch)=>{
     dispatch({type: 'LOADING' , payload:true})
 try {

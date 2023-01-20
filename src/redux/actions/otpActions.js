@@ -1,5 +1,7 @@
 import { message } from "antd";
 import axios from "axios";
+axios.defaults.baseURL="https://rentx-api-e9zj.onrender.com"
+// axios.defaults.baseURL="https://rentxcar.gamexonline.store"
 
 export const requestOtp = (reqObj) => async (dispatch) => {
   dispatch({ type: "LOADING", payload: true });

@@ -2,6 +2,10 @@ import axios from 'axios'
 import {message} from 'antd'
 
 //book a car
+//  axios.defaults.baseURL="https://rentxcar.gamexonline.store"
+axios.defaults.baseURL="https://rentx-api-e9zj.onrender.com"
+
+
 export const bookCar =(reqObj)=>async dispatch=>{
     dispatch({type: 'LOADING' , payload:true})
 

@@ -1,5 +1,8 @@
 import { message } from 'antd';
 import axios from 'axios';
+// axios.defaults.baseURL="https://rentxcar.gamexonline.store"
+axios.defaults.baseURL="https://rentx-api-e9zj.onrender.com"
+
 
 export const getAllCars =()=>async dispatch=>{
     dispatch({type: 'LOADING' , payload:true})
