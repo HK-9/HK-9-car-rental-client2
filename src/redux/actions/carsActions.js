@@ -1,14 +1,24 @@
 import { message } from 'antd';
+import { axiosPrivate } from '../../api/axios';
 import axios from 'axios';
-// axios.defaults.baseURL="https://rentxcar.gamexonline.store"
-axios.defaults.baseURL="https://rentx-api-e9zj.onrender.com"
 
+// axios.defaults.baseURL="https://rentxcar.gamexonline.store"
+// const user = JSON.parse(localStorage.getItem('user'))   
+const API = axios.defaults.baseURL="https://rentx-api-e9zj.onrender.com" 
+API.interceptors.request.use((req) => {
+    if (localStorage.getItem("user")) {
+      req.headers.Authorization = `Bearer ${JSON.parse(
+        localStorage.getItem("user")
+      ).token}`;
+    }
+    return req;
+  });
 
 export const getAllCars =()=>async dispatch=>{
     dispatch({type: 'LOADING' , payload:true})
 
 try {
-    const response = await axios.get('/api/cars/getallcars');
+    const response = await  API.get('/api/cars/getallcars');
     dispatch({type:'GET_ALL_CARS',payload:response.data});
     dispatch({type: 'LOADING' , payload:false});  
 
