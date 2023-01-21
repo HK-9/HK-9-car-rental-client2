@@ -5,7 +5,7 @@ import axios from 'axios'
 import {Home,Login,Register,BookingCar,Startup,UserBookings,AddCar,Profile,AdminHome,EditCar,Otp,Error404} from './pages/index' 
 import Addcar from "./pages/admin/AddCar/AddCar";
 
-axios.defaults.baseURL="https://rentx-api-e9zj.onrender.com"
+// axios.defaults.baseURL="https://rentx-api-e9zj.onrender.com"
 
 
 function App() {

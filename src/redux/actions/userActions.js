@@ -1,11 +1,11 @@
 import axios from "axios";
 import { message } from "antd";
 
-axios.defaults.baseURL="https://rentx-api-e9zj.onrender.com"
+// axios.defaults.baseURL="https://rentx-api-e9zj.onrender.com"
+// import useAxiosPrivate from "../../hooks/usAxiosPrivate";
 
 export const userLogin = (reqObj) => async (dispatch) => {
   dispatch({ type: "LOADING", payload: true });
-
   try {
     await axios.post("/api/auth/login", reqObj).then((res) => {
         console.log("successfull", res.data);

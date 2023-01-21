@@ -23,7 +23,7 @@ const { RangePicker } = DatePicker;
 function Home() {
   const { cars } = useSelector((state) => state.carsReducer);
   const { loading } = useSelector((state) => state.alertsReducer);
-  const user = localStorage.getItem("user");
+  const user = JSON.parse(localStorage.getItem("user"));
   const [totalCars, setTotalCars] = useState([]);
   const [duplicateCars, setDuplicatecars] = useState([])
   const dispatch = useDispatch();

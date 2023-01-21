@@ -17,7 +17,7 @@ import { Footnote } from "../../containers";
 import { Uploader } from "../../components/index";
 const { Header, Content, Sider } = Layout;
 
-axios.defaults.baseURL="https://rentx-api-e9zj.onrender.com"
+// axios.defaults.baseURL="https://rentx-api-e9zj.onrender.com"
 
 
   function Profile() {
