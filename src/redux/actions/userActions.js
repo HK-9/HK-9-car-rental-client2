@@ -1,6 +1,5 @@
-import axios from "axios";
+import axios from "../../API/axios";
 import { message } from "antd";
-
 export const userLogin = (reqObj) => async (dispatch) => {
   dispatch({ type: "LOADING", payload: true });
 
@@ -14,8 +13,8 @@ export const userLogin = (reqObj) => async (dispatch) => {
           window.location.href = "/home";
         }, 500);
       })
-      .catch((e) => {
-        console.log("unsuccesfull", e);
+      .catch((err) => {
+        console.log("unsuccesfull", err);
         dispatch({ type: "LOADING", payload: false });
         message.error("Something went wrong");
       });
@@ -38,7 +37,7 @@ export const userRegister = (reqObj) => async (dispatch) => {
       const response = axios.get(`/api/auth/requestotp?email=${email}`);
 
       console.log('API otp response:',response.data);
-    })
+    })  
     message.success("An OTP has been sent to your entered email");
     setTimeout(() => {
       window.location.href = "/otp";

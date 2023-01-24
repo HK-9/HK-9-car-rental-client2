@@ -9,6 +9,7 @@ import {Footnote} from '../../containers/index';
 // import { Footer } from 'antd/es/layout/layout';
 function Startup(){
   const user = JSON.parse(localStorage.getItem('user'));
+  
     return(<>
            {user ? <DefaultLayout />: <NavBar />}
       <section className='cont'>

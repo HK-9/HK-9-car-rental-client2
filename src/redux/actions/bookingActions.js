@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../../API/axios'
 import {message} from 'antd'
 
 //book a car
@@ -18,16 +18,20 @@ try {
 }    
 
 //get all bookings
-export const getAllBookings =()=>async dispatch=>{
+export const getAllBookings =(response)=>async dispatch=>{
     dispatch({type: 'LOADING' , payload:true})
 try {
-    const user = localStorage.getItem('user');
-    const response = await axios.get('/api/bookings/getallbookings');
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log('user',user.data.user)
+    const userId = user.data.user._id
+    // const data = user.data
+    const response = await axios.get(`/api/bookings/getallbookings?userId=${userId}`);
     dispatch({type:'GET_ALL_BOOKINGS',payload:response.data}); 
     dispatch({type: 'LOADING' , payload:false});  
 
 } catch (error) {
     if(error.response.status === 401) message.error('Unauthorized access, Please login again');
+    if(error) message.error('Something went wrong please')
     console.log('@bookings api actions ',error);
     dispatch({type: 'LOADING' , payload:false});
 }

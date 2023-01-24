@@ -17,6 +17,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import { Footnote } from "../../containers";
 import {SearchOutlined }from '@ant-design/icons'
 import moment from "moment";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 const { RangePicker } = DatePicker;
 
 // import classes from './home.module.css';
@@ -28,8 +29,15 @@ function Home() {
   const [duplicateCars, setDuplicatecars] = useState([])
   const dispatch = useDispatch();
   
+  const useAxios = useAxiosPrivate()
+
   useEffect(() => {
-    dispatch(getAllCars());
+    const fetchData = async()=>{
+      const {data} = await useAxios.get("/api/cars/getallcars");
+      console.log("dataaaaaaaaaaaa",data)
+      dispatch(getAllCars(data));
+    }
+    fetchData()
   }, []);
 
   useEffect(() => {

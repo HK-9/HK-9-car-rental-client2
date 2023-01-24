@@ -22,6 +22,7 @@ function DefaultLayout(props){
     }
 
     const user = JSON.parse(localStorage.getItem('user'));
+    console.log("Username@defaultLayout",user.data.user.username);
     const username = user.data.user.username;
     let items = [
         {
