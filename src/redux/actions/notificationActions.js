@@ -1,5 +1,5 @@
-import axios from 'axios'
-import {message} from 'antd'
+import axios from '../../API/axios';
+import {message} from 'antd';
 
 
 export const getAllNotifications = ()=>async (dispatch)=>{

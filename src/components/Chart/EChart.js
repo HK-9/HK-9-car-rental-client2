@@ -4,6 +4,7 @@ import { Row, Col, Typography } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { getdashboard } from "../../redux/actions/dashboardActions";
 import { useEffect } from "react";
+import { LoadingOutlined} from '@ant-design/icons';
 
 function EChart() {
     useEffect(() => {  
@@ -13,10 +14,17 @@ function EChart() {
   const dispatch = useDispatch();
   const { Title, Paragraph } = Typography; 
 
+  // ( dashboard?.data?.eachDaySale ).map((e)=>) 
+  const date = new Date ()
+  let day = date.getDate();
+  console.log(day)
+  console.log("todayUserCount",dashboard?.data?.eachDaySale);
+
   const userCount = dashboard?.data?.userCount[0].userCount;
   const carsCount = dashboard?.data?.carsCount[0].carsCount;
   const totalCount = dashboard?.data?.totalCount[0].TotalCount;
   const totalAmount = dashboard?.data?.totalAmount[0].totalAmount;
+  console.log('mapppp',dashboard?.data?.amount)
   // const eachDaySales = dashboard?.data.eachDaySale[0]
   // console.log('eachdaysales::',eachDaySales)
 
@@ -150,7 +158,7 @@ function EChart() {
       user: "Transactions completed",
     },
     {
-      Title:`₹ ${totalAmount}`,
+      Title:`₹ ${totalAmount?totalAmount:LoadingOutlined}`,
       user: "Stripe account",
      
     },

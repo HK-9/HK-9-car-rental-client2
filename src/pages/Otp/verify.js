@@ -2,11 +2,13 @@ import OTPInput from "otp-input-react";
 import React, { useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { verifyOtp } from "../../redux/actions/otpActions";
-
 import "./otp.css";
 
 
 function Verify() {
+  const user = JSON.parse(localStorage.getItem("user"));
+  const userEmail = user.data.user.email;
+  console.log('user',user.data.user.email)
   const dispatch = useDispatch();
   const [OTP, setOTP] = useState("");
   function handleChange(otp) {
@@ -15,12 +17,11 @@ function Verify() {
   function handleClick(){
     dispatch(verifyOtp(OTP));
   }
-    console.log('otp ',OTP)
   return (
     <div className="verifyDiv">
       <p className="p1">Verify Account</p>
       <p className="p2">
-        An OTP has been sent to your entered email abcd@gmail.com
+        An OTP has been sent to your entered email <strong> {userEmail}</strong>
       </p>
       <div className="otpElements">
         <p className="p3">Enter your Code here</p>

@@ -17,6 +17,7 @@ import {
     ToTopOutlined,
     MenuUnfoldOutlined,
     RightOutlined,
+    LoadingOutlined,
   } from "@ant-design/icons";
 
 import { Echart,LineChart } from '../../../components/index';
@@ -27,9 +28,15 @@ import { getdashboard } from "../../../redux/actions/dashboardActions";
 import { useEffect } from "react";
 
 
+
 function Dashboard() {
     const dispatch = useDispatch();
+    const user = JSON.parse(localStorage.getItem('user'));
+    const isAdmin = user?.data?.user?.isAdmin;
     useEffect(() => {  
+      if(!isAdmin){
+        message.error('Admin acces denied')
+      } 
         dispatch(getdashboard());
       }, []);
 
@@ -40,6 +47,7 @@ function Dashboard() {
       const totalCount = dashboard?.data?.totalCount[0].TotalCount;
       const totalAmount = dashboard?.data?.totalAmount[0].totalAmount;
      const todaySale = dashboard?.data?.eachDaySale[0]?.total
+     const dailySales=dashboard?.data?.amount
 
     const { Title, Text } = Typography;
     const dollor = [
@@ -150,6 +158,13 @@ function Dashboard() {
           icon: cart,
           bnb: "bnb2",
         },
+        {
+
+          today: "Today Sales",
+          title: `${dailySales}`,
+          icon: cart,
+          bnb: "bnb2",
+        }
       ];
   return (
     <div className="layout-content">
@@ -165,14 +180,19 @@ function Dashboard() {
               xl={6}
               className="mb-24"
             >
+          
               <Card bordered={false} className="criclebox ">
                 <div className="number">
+               
                   <Row align="middle" gutter={[24, 0]}>
                     <Col xs={18}>
                       <span>{c.today}</span>
+                      {todaySale===undefined?<LoadingOutlined/>:
+
                       <Title level={3}>
                         {c.title} <small className={c.bnb}>{c.persent}</small>
                       </Title>
+              }
                     </Col>
                     <Col xs={6}>
                       <div className="icon-box">{c.icon}</div>

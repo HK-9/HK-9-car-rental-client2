@@ -18,7 +18,7 @@ try {
 }    
 
 //get all bookings
-export const getAllBookings =(response)=>async dispatch=>{
+export const getAllBookings =()=>async dispatch=>{
     dispatch({type: 'LOADING' , payload:true})
 try {
     const user = JSON.parse(localStorage.getItem('user'));

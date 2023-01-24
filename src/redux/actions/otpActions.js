@@ -1,5 +1,5 @@
 import { message } from "antd";
-import axios from "axios";
+import axios from "../../API/axios";
 
 export const requestOtp = (reqObj) => async (dispatch) => {
   dispatch({ type: "LOADING", payload: true });

@@ -9,8 +9,6 @@ import { QueryClient,QueryClientProvider } from "react-query";
 
 function App() {
   const queryClient = new QueryClient();
-
-  // axios.defaults.baseURL="https://rentxcar.gamexonline.store";
   return (
     <div className="App">
       

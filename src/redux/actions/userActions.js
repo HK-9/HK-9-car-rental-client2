@@ -16,15 +16,16 @@ export const userLogin = (reqObj) => async (dispatch) => {
       .catch((err) => {
         console.log("unsuccesfull", err);
         dispatch({ type: "LOADING", payload: false });
+        // if(err.response.status === 401) return message.error(err.response.data.message)
         message.error("Something went wrong");
       });
   } catch (error) {
+
     console.log("catch block", error);
   }
 };
 
 export const userRegister = (reqObj) => async (dispatch) => {
-  
   dispatch({ type: "LOADING", payload: true });
   const email = reqObj.email;
   console.log('email:email')

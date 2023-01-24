@@ -34,8 +34,8 @@ function UserBookings() {
       <Space direction="vertical" style={{width:'100%',height:'100%',minHeight:"90vh"}} size='large'>
       <Row justify="center">
         <Col lg={20} sm={24}  style={{minHeight:'90vh'}}>
-          {!bookings.length === 0 && (<div className="d-flex justify-content-center" style={{width:'100%',hieght:'auto'}}>
-            <Empty/>
+          {bookings.length === 0 && (<div className="d-flex justify-content-center" style={{width:'100%',hieght:'auto'}}>
+            <Empty />
             </div>)}
           {bookings.map((booking) => {
             return (
@@ -63,16 +63,13 @@ function UserBookings() {
                           <p>
                           Status : <b>{booking.status === "cancelled" ? <Tag color="red">{booking.status}</Tag>:<Tag color="green">{booking.status}</Tag>}</b>
                           </p>
-                         
-
-                          {/* <p>Total Amount :<b>{booking.totalAmount}</b></p> */}
+                        
                           
                   </Col>
                   <Col lg={10} sm={24}>
                     <p>
                       Transaction ID :<b>{booking.transactionId}</b>{" "}
                     </p>
-                    {/* <p>From : <b>{booking.car.bookedTimeSotes.from}</b></p> */}
 
                     <p>
                       From : <b>{booking.bookedTimeSlots.from}</b>

@@ -23,28 +23,21 @@ const { RangePicker } = DatePicker;
 // import classes from './home.module.css';
 function Home() {
   const { cars } = useSelector((state) => state.carsReducer);
+  console.log("cars",cars);
   const { loading } = useSelector((state) => state.alertsReducer);
   const user = localStorage.getItem("user");
   const [totalCars, setTotalCars] = useState([]);
   const [duplicateCars, setDuplicatecars] = useState([])
   const dispatch = useDispatch();
   
-  const useAxios = useAxiosPrivate()
-
   useEffect(() => {
-    const fetchData = async()=>{
-      const {data} = await useAxios.get("/api/cars/getallcars");
-      console.log("dataaaaaaaaaaaa",data)
-      dispatch(getAllCars(data));
-    }
-    fetchData()
+    dispatch(getAllCars());
   }, []);
 
   useEffect(() => {
     setTotalCars(cars);
     setDuplicatecars(cars);
   }, [cars]);
-
 
   //booking time filter function=======
   function setFilter(values) {

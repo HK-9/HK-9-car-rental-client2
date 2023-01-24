@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../../API/axios';
 import {message} from 'antd'
 
 export const getdashboard = ()=>async (dispatch)=>{
