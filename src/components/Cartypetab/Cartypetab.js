@@ -1,6 +1,6 @@
 import './cartypetab.css';
 import React, {useState} from 'react'
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Tab, Tabs, TabList } from "react-tabs";
 
 function Cartypetab() {
 

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Verify from "./Verify";
 import Vector from "./Vector";
 import OTPInput from "otp-input-react";
 import { useDispatch,useSelector } from "react-redux";
