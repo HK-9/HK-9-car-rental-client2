@@ -9,16 +9,21 @@ import axios from 'axios';
 import firebase from '../../firebase/firebase';
 import './register.css'
 import Spinner from '../../components/Spinner/Spinner';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 function Register() {
   const dispatch = useDispatch();
   const {loading} = useSelector(state=>state.alertsReducer);
-  async function onFinish(values){
+
+  async function onSubmit(values){
+    await dispatch(userRegister(values))
+    console.log("saffasfasfasfafaf");
     const email = values.email;
-    await dispatch(requestOtp(values));
-    await dispatch(userRegister(values));
-       console.log(values);
+    console.log(values);
   }
+
+
 
   return (
     <div className='login'>
@@ -28,11 +33,11 @@ function Register() {
           <div className='login-banner' />
         </Col>
         <Col lg={8} className = 'text-left'>
-          <Form layout='vertical' className='login-form p-5' onFinish={onFinish}>
+          <Form layout='vertical' className='login-form p-5' onFinish={onSubmit}>
             <div className='login-logo'>
             <img src={logo1} alt="logo" />
             </div>
-            <h3>REGISTER</h3>
+            <h3 style={{color:'white'}}>REGISTER</h3>
             <hr />
                 <Form.Item name='username' label='User Name' rules={[{required:true}]}>
                   <Input />
@@ -69,7 +74,6 @@ function Register() {
                 </Form.Item>  
 
                 <button className="button-62 mb-3">Register </button>   
-                {/* <button className="button-62 mb-3" role="button" onClick={handleClick}>Request OTP </button>    */}
                  <br />
                 <Link className='login-link mt-5' to='/login'>Click Here to Login</Link>
 

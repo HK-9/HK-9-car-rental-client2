@@ -35,7 +35,6 @@ function Verify() {
             separator={<span></span>}
           secure />
         </div>
-
         <p className="p3">Didn't receive the code?</p>
         <p className="resend">Resend</p>
       </div>

@@ -1,8 +1,6 @@
 import React from "react";
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { Row, Col, Button, Edit, Popconfirm, message, Tabs } from "antd";
-import { AndroidOutlined, AppleOutlined } from "@ant-design/icons";
+import { Row, Col, Popconfirm } from "antd";
 import {
   DeleteOutlined,
   EditOutlined,
@@ -11,13 +9,10 @@ import {
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllCars } from "../../../redux/actions/carsActions";
-import { Spinner, DefaultLayout } from "../../../components/index";
 import { deleteCar } from "../../../redux/actions/carsActions";
 
 function CarsManagement() {
   const { cars } = useSelector((state) => state.carsReducer);
-  const { loading } = useSelector((state) => state.alertsReducer);
-  const user = localStorage.getItem("user");
   const [totalCars, setTotalCars] = useState([]);
   const dispatch = useDispatch();
 

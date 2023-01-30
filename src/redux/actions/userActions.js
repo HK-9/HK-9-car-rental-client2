@@ -32,25 +32,24 @@ export const userRegister = (reqObj) => async (dispatch) => {
   function err_userExists(){
     message.error('email already exists, please try another');
   }
+  function err_serverError(){
+    message.error('Internal server error');
+  }
   try {
     await axios.post("/api/auth/register", reqObj).then((res)=>{
+      console.log("API response of register route:",res.data)
       localStorage.setItem("user", JSON.stringify(res.data));
       const response = axios.get(`/api/auth/requestotp?email=${email}`);
-
       console.log('API otp response:',response.data);
     })  
     message.success("An OTP has been sent to your entered email");
     setTimeout(() => {
       window.location.href = "/otp";
-    }, 500);
+    }, 1000);
     dispatch({ type: "LOADING", payload: false });
   } catch (error) {
-    console.log("user Register catch block", error);
     dispatch({ type: "LOADING", payload: false });
-    if(error.response.status === 401){
-      err_userExists()
-    }else{
-      message.error("Something went wrong,please try again");
-    }
+    if(error.code === 'ERR_NETWORK') return message.error("Internal server error");
+    if(error.response.status === 401) err_userExists()
   }
 };

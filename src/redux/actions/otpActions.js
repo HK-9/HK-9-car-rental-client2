@@ -6,7 +6,7 @@ export const requestOtp = (reqObj) => async (dispatch) => {
   const email = reqObj.email;
   localStorage.setItem(email, email);
   try {
-    const response = axios.get(`/api/auth/requestotp?email=${email}`);
+    await axios.get(`/api/auth/requestotp?email=${email}`);
     dispatch({ type: "LOADING", payload: false });
   } catch (error) {
     console.log("otp actions catch block", error);
@@ -16,7 +16,6 @@ export const requestOtp = (reqObj) => async (dispatch) => {
 
 export const verifyOtp = (reqObj) => async (dispatch) => {
   const user = localStorage.getItem("user");
-  console.log('email:::',user)
   dispatch({ type: "LOADING", payload: true });
   console.log("xxxxxx", user);
   function err_otp() {
@@ -26,12 +25,14 @@ export const verifyOtp = (reqObj) => async (dispatch) => {
     message.error("unauthorized entry");
   }
   try {
-    const response = await axios.post("/api/auth/varifyotp", { reqObj, user });
+    await axios.post("/api/auth/varifyotp", { reqObj, user });
+  dispatch({ type: "LOADING", payload: false });
     message.success("OTP successfully verified");
     setTimeout(() => {
       window.location.href = "/login";
     }, 500);
   } catch (error) {
+      dispatch({ type: "LOADING", payload: false });
     if (error.response.status === 403) err_otp();
     if (error.response.status === 401) err_auth();
   }

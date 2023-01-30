@@ -1,14 +1,12 @@
 import { message } from 'antd';
-    import useAxiosPrivate from '../../hooks/useAxiosPrivate'
     import axios from '../../API/axios';
-    import { useQuery } from 'react-query';
 
 
     export const getAllCars =()=>async dispatch=>{
         dispatch({type: 'LOADING' , payload:true})
     
     try {
-        const response = await axios.get('/api/cars/getallcars');
+        const response = await axios.get('/api/landing/getallcars');
         dispatch({type:'GET_ALL_CARS',payload:response.data});
         dispatch({type: 'LOADING' , payload:false});  
     

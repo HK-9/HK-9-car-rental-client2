@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Verify from "./verify";
+import Verify from "./Verify";
 import Vector from "./Vector";
-
+import OTPInput from "otp-input-react";
+import { useDispatch,useSelector } from "react-redux";
+import { verifyOtp } from "../../redux/actions/otpActions";
+import "./otp.css";
+import { message } from "antd";
+import { useEffect } from "react";
+import { LoadingOutlined} from '@ant-design/icons';
 const StyledContainer = styled.div`
   height: 97vh;
   width: 100vw;
@@ -69,7 +75,35 @@ const StyledSubtitle = styled.div`
   line-height: 19px;
 `;
 
-function Card() {
+function Otp() {
+  const { loading } = useSelector((state) => state.alertsReducer)
+  const dispatch = useDispatch();
+  const [OTP, setOTP] = useState("");
+  const [user, setUser] = useState(null)
+
+    
+    // console.log('user',OTP)
+    const userEmail = user?.email;
+    console.log("userEmail",userEmail)
+    useEffect(()=>{
+      const userData = JSON.parse(localStorage.getItem("user"));
+      setUser(userData)
+      if(!userData){
+        message.error('Looks like your session expired, Please login again')
+        setTimeout(()=>{
+          window.location.href='/register'
+        },[2000])
+      }  
+        
+    console.log('hei')
+  },[])
+
+  function handleChange(otp) {
+    setOTP(otp);
+  }
+  function handleClick(){
+    dispatch(verifyOtp(OTP));
+  }
   return (
     <StyledContainer>
       <StyledContainer2
@@ -86,7 +120,37 @@ function Card() {
             inputHeight="75vh"
             inputBorder="15px"
           >
-            <Verify />
+            {/* <Verify /> */}
+            <div className="verifyDiv">
+              <p className="p1">Verify Account</p>
+              <p className="p2">
+                An OTP has been sent to your entered email{" "}
+                <u>
+                  <strong style={{ textTransform:'lowercase'}}> {userEmail}</strong>
+                </u>
+              </p>
+              <div className="otpElements">
+                <p className="p3">Enter your Code here</p>
+                <div className="otp">
+                  <OTPInput
+                    value={OTP}
+                    onChange={handleChange}
+                    otpType="number"
+                    inputStyle="inputStyle"
+                    numInputs={4}
+                    separator={<span></span>}
+                    secure
+                  />
+                </div>
+
+                <p className="p3">Didn't receive the code?</p>
+                <p className="resend">Resend</p>
+              </div>
+              <button className="otp-btn" onClick={handleClick} type="submit">
+                {loading? <LoadingOutlined /> :                 
+                "Verify"}
+              </button>
+            </div>
           </StyledContainer2>
         </StyledContainer3>
       </StyledYo>
@@ -94,4 +158,4 @@ function Card() {
   );
 }
 
-export default Card;
+export default Otp;

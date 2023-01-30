@@ -27,6 +27,7 @@ function Home() {
   const { loading } = useSelector((state) => state.alertsReducer);
   const user = localStorage.getItem("user");
   const [totalCars, setTotalCars] = useState([]);
+
   const [duplicateCars, setDuplicatecars] = useState([])
   const dispatch = useDispatch();
   
